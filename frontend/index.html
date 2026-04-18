@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoneyTree</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>&#x1F333; MoneyTree</h1>
+      <div class="header-actions">
+        <span id="market-status" class="market-badge"></span>
+        <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+        <button id="add-btn" class="btn btn-primary">+ Add Stock</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="dashboard">
+    <div id="loading" class="loading">Loading watchlist&hellip;</div>
+    <div id="empty" class="empty hidden">
+      No stocks yet. Click <strong>+ Add Stock</strong> to get started.
+    </div>
+    <div id="sectors"></div>
+  </main>
+
+  <!-- Add Stock Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2>Add Stock</h2>
+      <input id="ticker-input" type="text" placeholder="e.g. AAPL" maxlength="10" autocomplete="off" />
+      <div id="modal-error" class="modal-error hidden"></div>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+        <button id="modal-submit" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
